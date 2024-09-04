@@ -1,0 +1,29 @@
+Memory limit exceed.....
+#include<bits/stdc++.h>
+using namespace std;
+ vector<int> selfDividingNumbers(int left, int right) {
+         vector<int> v;
+        for(int i =left;i<=right;i++){
+               int c=log10(i)+1;
+               int n = i;
+           bool divide = true;
+            while(c--){
+                int c = i%10;
+                if(n%c!=0) { divide = false;
+                  
+                }
+                i /= 10;
+           
+            } 
+                if(divide) v.push_back(i);
+        }
+        return v;
+    }
+int main(){
+int x,y; cin>>x>>y;
+vector<int> v;
+v = selfDividingNumbers(x,y);
+for(int i=0;i<v.size();i++){
+     cout<<v[i]<<" ";
+}
+}
