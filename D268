@@ -1,0 +1,13 @@
+class Solution {
+public:
+    int missingNumber(vector<int>& nums) {
+       int m = 0; 
+       for(int i=1;i<=nums.size();i++){
+            m =  m^nums[i-1];
+       }
+       for(int i=1;i<=nums.size();i++){
+            m = m^i;
+       }
+       return m;
+    }
+};
