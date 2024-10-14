@@ -10,3 +10,6 @@ public:
     }
 
 };
+// reverse(nums,nums+k);
+     //   reverse(nums+k,nums+nums.size());
+     //   reverse(nums,nums+nums.size());
