@@ -14,3 +14,15 @@ public:
         } return -1;
     }
 };
+// Recursive Approach for this:
+
+void recurBin(int arr, int low,int high, int target){
+    if(low>high) return -1;
+    mid = (low+high)/2;
+    if(arr[mid] ==target) return mid;
+    else if(target>arr[mid]) {
+        recurBin(arr,mid+1,high,target);
+    }
+   return recurBin(arr,low,mid-1;target);
+    
+}
