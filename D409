@@ -1,0 +1,32 @@
+// 409. Longest Palindrome
+
+class Solution {
+public:
+    int longestPalindrome(string s) {
+        int len = s.length();
+        vector<int>lower(26,0), upper(26,0);
+        for(int i=0;i<len;i++){
+            if(s[i]>='a' && s[i]<='z'){
+                lower[s[i]-'a']++;
+            }
+           else if(s[i]>='A' && s[i]<='Z'){
+                upper[s[i]-'A']++;
+            }
+        } int maxStr = 0,a = 0;
+        for(int i=0;i<26;i++){
+                if(lower[i] %2 !=0){
+                    maxStr += lower[i]-1 ;
+                    a = 1;
+                } else {
+                     maxStr += lower[i] ;
+                }
+                if(upper[i]%2 !=0){
+                     maxStr += upper[i]-1 ;
+                    a = 1;
+                } else {
+                    maxStr += upper[i];
+                }
+                 
+        } return maxStr+a;
+    }
+};
